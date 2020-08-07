@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vKn-9P-Ny8">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Screen View Controller-->
+        <scene sceneID="GzV-lN-fg7">
+            <objects>
+                <viewController storyboardIdentifier="MainScreenViewController" id="vKn-9P-Ny8" customClass="MainScreenViewController" customModule="StatefulScreenExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNZ-bO-rhc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edm-EQ-T2e">
+                                <rect key="frame" x="16" y="16" width="343" height="261"/>
+                                <string key="text">В качестве демонстрации сделан экран профиля. У этого модуля есть 2 ViewController'a. Выглядят они одинаково, но сделаны с разной реализацией: на StackView и на TableView.
+Так сделано с целью демонстрации того, что Presenter и View не зависят друг от друга. В реальности, как правило, большинство модулей имеют 1 ViewController.
+Однако бывают исключения. Например это может быть полезно для A/B тестов, когда нужно проверить 2 разные вёрстки. Или в будущем, когда потребуется переезд на Swift UI :)</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Какой экран показать?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5V-jA-GYP">
+                                <rect key="frame" x="16" y="293" width="343" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1k-cu-P59">
+                                <rect key="frame" x="16" y="336" width="122" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="StackViewProfile"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2q-LF-23C">
+                                <rect key="frame" x="239" y="336" width="120" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="TableViewProfile"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HgA-Aw-ocO" firstAttribute="trailing" secondItem="C2q-LF-23C" secondAttribute="trailing" constant="16" id="H3a-hv-ZMl"/>
+                            <constraint firstItem="edm-EQ-T2e" firstAttribute="leading" secondItem="HgA-Aw-ocO" secondAttribute="leading" constant="16" id="NFO-N7-W57"/>
+                            <constraint firstItem="e1k-cu-P59" firstAttribute="leading" secondItem="HgA-Aw-ocO" secondAttribute="leading" constant="16" id="OPT-x8-N4p"/>
+                            <constraint firstItem="HgA-Aw-ocO" firstAttribute="trailing" secondItem="edm-EQ-T2e" secondAttribute="trailing" constant="16" id="SyW-Yn-odq"/>
+                            <constraint firstItem="X5V-jA-GYP" firstAttribute="leading" secondItem="HgA-Aw-ocO" secondAttribute="leading" constant="16" id="XhI-BT-tVc"/>
+                            <constraint firstItem="HgA-Aw-ocO" firstAttribute="trailing" secondItem="X5V-jA-GYP" secondAttribute="trailing" constant="16" id="ZOW-qQ-cg8"/>
+                            <constraint firstItem="e1k-cu-P59" firstAttribute="top" secondItem="X5V-jA-GYP" secondAttribute="bottom" constant="24" id="eve-vr-ccz"/>
+                            <constraint firstItem="C2q-LF-23C" firstAttribute="top" secondItem="X5V-jA-GYP" secondAttribute="bottom" constant="24" id="hUa-JR-jHK"/>
+                            <constraint firstItem="edm-EQ-T2e" firstAttribute="top" secondItem="HgA-Aw-ocO" secondAttribute="top" constant="16" id="lHZ-4g-BGd"/>
+                            <constraint firstItem="X5V-jA-GYP" firstAttribute="top" secondItem="edm-EQ-T2e" secondAttribute="bottom" constant="16" id="w63-24-dOd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HgA-Aw-ocO"/>
+                    </view>
+                    <connections>
+                        <outlet property="stackViewScreenButton" destination="e1k-cu-P59" id="a9A-I9-kVW"/>
+                        <outlet property="tableViewScreenButton" destination="C2q-LF-23C" id="kwy-c4-icO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k0X-am-vwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="205"/>
+        </scene>
+    </scenes>
+</document>

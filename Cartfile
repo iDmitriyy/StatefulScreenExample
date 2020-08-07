@@ -1,0 +1,4 @@
+github "uber/RIBs" "aafdd2d773307bc845d5d8cf2698328914de622e" #0.9.2 with RxSwift 5.0
+
+github "ReactiveX/RxSwift" == 5.0.1
+github "RxSwiftCommunity/RxDataSources" == 4.0.1
