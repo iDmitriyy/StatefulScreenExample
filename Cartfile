@@ -3,4 +3,6 @@ github "uber/RIBs" "6d66dd1a7ccf806eec7176324d7fc6ebafb616e1" #== 0.10.1
 github "ReactiveX/RxSwift" ~> 6.0.0 #== 0.6.2 
 github "RxSwiftCommunity/RxDataSources" == 5.0.1
 
-
+# На XCode 12 есть прблемы со сборкой через Carthage. Фикс:
+# https://github.com/Carthage/Carthage/issues/3146
+# https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md
