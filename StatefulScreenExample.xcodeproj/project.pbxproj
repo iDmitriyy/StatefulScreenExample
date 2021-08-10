@@ -127,6 +127,9 @@
 		8E73C8E1239C64D9000A7F8A /* MainScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenBuilder.swift; sourceTree = "<group>"; };
 		8E73C8E2239C64D9000A7F8A /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		8E73C8F0239C6D13000A7F8A /* Router+Detach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Detach.swift"; sourceTree = "<group>"; };
+		8E9116CB26C2BBE200C089B7 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		8E9116CC26C2BBE200C089B7 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		8E9116CD26C2BBE300C089B7 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		8EFD7C06239BF000002EBA60 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		8EFD7C07239BF000002EBA60 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		8EFD7C08239BF000002EBA60 /* ProfileStackViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStackViewController.storyboard; sourceTree = "<group>"; };
@@ -272,6 +275,9 @@
 		8E71C1702399A1B90051C45E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E9116CD26C2BBE300C089B7 /* RxCocoa.xcframework */,
+				8E9116CB26C2BBE200C089B7 /* RxRelay.xcframework */,
+				8E9116CC26C2BBE200C089B7 /* RxSwift.xcframework */,
 				8E71C1752399A1B90051C45E /* Differentiator.framework */,
 				8E71C1712399A1B90051C45E /* RIBs.framework */,
 				8E71C1742399A1B90051C45E /* RxCocoa.framework */,
