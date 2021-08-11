@@ -18,12 +18,12 @@ final class MainScreenInteractor: Interactor, MainScreenInteractable {
 // MARK: - IOTransformer
 
 extension MainScreenInteractor: IOTransformer {
-  func transform(_ input: MainScreenViewOutput) -> Empty {
-    input.stackViewButtonTap.subscribe(onNext: { [weak self] in
+  func transform(input viewOutput: MainScreenViewOutput) -> Empty {
+    viewOutput.stackViewButtonTap.subscribe(onNext: { [weak self] in
       self?.router?.routeToStackViewProfile()
     }).disposed(by: disposeBag)
 
-    input.tableViewButtonTap.subscribe(onNext: { [weak self] in
+    viewOutput.tableViewButtonTap.subscribe(onNext: { [weak self] in
       self?.router?.routeToTableViewProfile()
     }).disposed(by: disposeBag)
 

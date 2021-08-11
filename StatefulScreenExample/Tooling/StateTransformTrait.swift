@@ -25,3 +25,32 @@ public struct StateTransformTrait<State> {
     self.disposeBag = disposeBag
   }
 }
+
+// MARK: - StateTransformBuilder
+
+@resultBuilder
+public enum StateTransformBuilder {
+  public static func buildBlock<State>(_ transitions: Observable<State>...) -> Observable<State> {
+    .merge(transitions)
+  }
+}
+
+protocol StateTransformer: Namespace {}
+
+extension StateTransformer {
+  public static func transitions<State>(@StateTransformBuilder builder: () -> Observable<State>)
+    -> Observable<State> {
+    builder()
+  }
+
+  public static func transition<T>(_ expression: () -> T) -> T {
+    expression()
+  }
+}
+
+ extension Observable {
+  public static func merge<State>(@StateTransformBuilder builder: () -> Observable<State>)
+    -> Observable<State> {
+      builder()
+  }
+ }

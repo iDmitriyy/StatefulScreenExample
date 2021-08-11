@@ -25,8 +25,8 @@ public enum VIPBinder: Namespace {
     where V: BindableView, I: IOTransformer, P: IOTransformer,
     V.Output == I.Input, I.Output == P.Input, P.Output == V.Input {
     let viewOutput = view.getOutput()
-    let interactorOutput = interactor.transform(viewOutput)
-    let presenterOutput = presenter.transform(interactorOutput)
+    let interactorOutput = interactor.transform(input: viewOutput)
+    let presenterOutput = presenter.transform(input: interactorOutput)
     view.bindWith(presenterOutput)
     
     return (viewOutput: viewOutput, interactorOutput: interactorOutput, presenterOutput: presenterOutput)
@@ -40,8 +40,8 @@ public enum VIPBinder: Namespace {
     V.Output == I.Input, I.Output == P.Input, P.Output == V.Input {
     viewController.loadViewIfNeeded()
     let viewOutput = viewController.getOutput()
-    let interactorOutput = interactor.transform(viewOutput)
-    let presenterOutput = presenter.transform(interactorOutput)
+    let interactorOutput = interactor.transform(input: viewOutput)
+    let presenterOutput = presenter.transform(input: interactorOutput)
     viewController.bindWith(presenterOutput)
     
     return (viewOutput: viewOutput, interactorOutput: interactorOutput, presenterOutput: presenterOutput)
@@ -63,8 +63,8 @@ public enum VIPBinder: Namespace {
       
       // У вьюконтроллера loadViewIfNeeded() не вызываем
       let viewOutput = viewController.getOutput()
-      let interactorOutput = interactor.transform(viewOutput)
-      let presenterOutput = presenter.transform(interactorOutput)
+      let interactorOutput = interactor.transform(input: viewOutput)
+      let presenterOutput = presenter.transform(input: interactorOutput)
       viewController.bindWith(presenterOutput)
       
       let vipOutput = DeferredVIPOutput(viewOutput: viewOutput,
@@ -83,7 +83,7 @@ public enum VIPBinder: Namespace {
     where V.Output == I.Input, I.Output == V.Input {
     viewController.loadViewIfNeeded()
     let viewOutput = viewController.getOutput()
-    let interactorOutput = interactor.transform(viewOutput)
+    let interactorOutput = interactor.transform(input: viewOutput)
     viewController.bindWith(interactorOutput)
     
     return (viewOutput: viewOutput, interactorOutput: interactorOutput)
@@ -102,7 +102,7 @@ public enum VIPBinder: Namespace {
       
       // У вьюконтроллера loadViewIfNeeded() не вызываем
       let viewOutput = viewController.getOutput()
-      let interactorOutput = interactor.transform(viewOutput)
+      let interactorOutput = interactor.transform(input: viewOutput)
       viewController.bindWith(interactorOutput)
       
       let vipOutput: VIOutput = (viewOutput, interactorOutput)

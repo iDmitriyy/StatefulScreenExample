@@ -16,7 +16,7 @@ final class ProfilePresenter: ProfilePresentable {}
 
 extension ProfilePresenter: IOTransformer {
   /// Метод отвечает за преобразование состояния во ViewModel'и и сигналы (команды)
-  func transform(_ state: Observable<ProfileInteractorState>) -> ProfilePresenterOutput {
+  func transform(input state: Observable<ProfileInteractorState>) -> ProfilePresenterOutput {
     let viewModel = Helper.viewModel(state)
     
     let isContentViewVisible = state.compactMap { state -> Void? in
