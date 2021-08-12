@@ -6,6 +6,8 @@
 //  Copyright © 2020 IgnatyevProd. All rights reserved.
 //
 
+// MARK: - LoadingState
+
 /// Состояние интеракторов, которое встречается на многих экранах..
 /// L - Loading, D  - Data, E - Error
 public enum LoadingState<D, E> {
@@ -17,6 +19,82 @@ public enum LoadingState<D, E> {
 extension LoadingState: Equatable where D: Equatable, E: Equatable {}
 
 extension LoadingState: Hashable where D: Hashable, E: Hashable {}
+
+// MARK: - PagedLoadingState
+
+/// На пагинированных списках загруженные данные хранятся не внутри enum'a, а в отдельном стриме (ScreenModel)
+public enum PagedLoadingState<E: Error> {
+  case initialDataLoading
+  case initialDataLoaded
+  case initialDataLoadingError(error: E)
+  
+  case nextPageLoading(nextPage: UInt)
+  case nextPageDataLoaded
+  case nextPageLoadingError(error: E, nextPage: UInt)
+}
+
+extension PagedLoadingState: GeneralizableState {
+  /// case .initialDataLoading, case .nextPageLoading
+  public var isLoadingState: Bool {
+    switch self {
+    case .initialDataLoading,
+         .nextPageLoading:
+      return true
+      
+    case .initialDataLoaded,
+         .initialDataLoadingError,
+         .nextPageDataLoaded,
+         .nextPageLoadingError:
+      return false
+    }
+  }
+  
+  /// case .initialDataLoaded, case .nextPageDataLoaded
+  public var isDataLoadedState: Bool {
+    switch self {
+    case .initialDataLoaded,
+         .nextPageDataLoaded:
+      return true
+      
+    case .initialDataLoading,
+         .initialDataLoadingError,
+         .nextPageLoading,
+         .nextPageLoadingError:
+      return false
+    }
+  }
+
+  /// case .initialDataLoadingError, case .nextPageLoadingError
+  public var isLoadingErrorState: Bool {
+    switch self {
+    case .initialDataLoadingError,
+         .nextPageLoadingError:
+      return true
+      
+    case .initialDataLoading,
+         .initialDataLoaded,
+         .nextPageLoading,
+         .nextPageDataLoaded:
+      return false
+    }
+  }
+}
+
+extension PagedLoadingState: LoadingIndicatableState {
+  public var shouldLoadingIndicatorBeVisible: Bool {
+    switch self {
+    case .initialDataLoading:
+      return true
+      
+    case .initialDataLoaded,
+         .initialDataLoadingError,
+         .nextPageLoading,
+         .nextPageDataLoaded,
+         .nextPageLoadingError:
+      return false
+    }
+  }
+}
 
 // MARK: - GeneralizableState
 

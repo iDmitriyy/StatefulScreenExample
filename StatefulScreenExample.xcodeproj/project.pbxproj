@@ -44,6 +44,7 @@
 		8E73C8E8239C64D9000A7F8A /* MainScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73C8E1239C64D9000A7F8A /* MainScreenBuilder.swift */; };
 		8E73C8E9239C64D9000A7F8A /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73C8E2239C64D9000A7F8A /* MainScreenInteractor.swift */; };
 		8E73C8F1239C6D13000A7F8A /* Router+Detach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73C8F0239C6D13000A7F8A /* Router+Detach.swift */; };
+		8EAFFC4726C51ACC00613A07 /* Observable+filteredByState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFFC4626C51ACC00613A07 /* Observable+filteredByState.swift */; };
 		8EFD7C0D239BF000002EBA60 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C06239BF000002EBA60 /* ProfilePresenter.swift */; };
 		8EFD7C0E239BF000002EBA60 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C07239BF000002EBA60 /* ProfileRouter.swift */; };
 		8EFD7C0F239BF000002EBA60 /* ProfileStackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD7C08239BF000002EBA60 /* ProfileStackViewController.storyboard */; };
@@ -63,7 +64,7 @@
 		8EFD7C3B239C1680002EBA60 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C3A239C1680002EBA60 /* NibLoadable.swift */; };
 		8EFD7C3D239C16CB002EBA60 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C3C239C16CB002EBA60 /* ErrorMessageView.swift */; };
 		8EFD7C42239C1A04002EBA60 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C41239C1A04002EBA60 /* UIView+Extensions.swift */; };
-		8EFD7C4D239C22A4002EBA60 /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C4C239C22A4002EBA60 /* Rx+Extension.swift */; };
+		8EFD7C4D239C22A4002EBA60 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD7C4C239C22A4002EBA60 /* Observable+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		8E9116CB26C2BBE200C089B7 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 		8E9116CC26C2BBE200C089B7 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		8E9116CD26C2BBE300C089B7 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		8EAFFC4626C51ACC00613A07 /* Observable+filteredByState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+filteredByState.swift"; sourceTree = "<group>"; };
 		8EFD7C06239BF000002EBA60 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		8EFD7C07239BF000002EBA60 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		8EFD7C08239BF000002EBA60 /* ProfileStackViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStackViewController.storyboard; sourceTree = "<group>"; };
@@ -149,7 +151,7 @@
 		8EFD7C3A239C1680002EBA60 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		8EFD7C3C239C16CB002EBA60 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		8EFD7C41239C1A04002EBA60 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		8EFD7C4C239C22A4002EBA60 /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
+		8EFD7C4C239C22A4002EBA60 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +262,8 @@
 				8EFD7C26239BF7D1002EBA60 /* StoryboardInstantiatable.swift */,
 				8EFD7C3A239C1680002EBA60 /* NibLoadable.swift */,
 				8EFD7C41239C1A04002EBA60 /* UIView+Extensions.swift */,
-				8EFD7C4C239C22A4002EBA60 /* Rx+Extension.swift */,
+				8EFD7C4C239C22A4002EBA60 /* Observable+Extensions.swift */,
+				8EAFFC4626C51ACC00613A07 /* Observable+filteredByState.swift */,
 				8E73C892239C4411000A7F8A /* TableViewRegisterable.swift */,
 				8E73C897239C4482000A7F8A /* UITableViewXibContainerCell.swift */,
 				8E73C8F0239C6D13000A7F8A /* Router+Detach.swift */,
@@ -547,7 +550,7 @@
 			files = (
 				8EFD7C10239BF000002EBA60 /* ProfileStackViewController.swift in Sources */,
 				8E71C13B23999E920051C45E /* AppDelegate.swift in Sources */,
-				8EFD7C4D239C22A4002EBA60 /* Rx+Extension.swift in Sources */,
+				8EFD7C4D239C22A4002EBA60 /* Observable+Extensions.swift in Sources */,
 				8E73C8E8239C64D9000A7F8A /* MainScreenBuilder.swift in Sources */,
 				8EFD7C3B239C1680002EBA60 /* NibLoadable.swift in Sources */,
 				8E5925DD248130BA002623FB /* StateTransformTrait.swift in Sources */,
@@ -567,6 +570,7 @@
 				8E5925DB24812DD5002623FB /* LoadingState.swift in Sources */,
 				8E73C8E9239C64D9000A7F8A /* MainScreenInteractor.swift in Sources */,
 				8EFD7C1C239BF15C002EBA60 /* ProfileServiceImp.swift in Sources */,
+				8EAFFC4726C51ACC00613A07 /* Observable+filteredByState.swift in Sources */,
 				8EFD7C0E239BF000002EBA60 /* ProfileRouter.swift in Sources */,
 				8E73C8AD239C493A000A7F8A /* DisclosureTextView.swift in Sources */,
 				8E5925D724812927002623FB /* PublishObservable.swift in Sources */,

@@ -122,7 +122,7 @@ extension ProfileInteractor {
         
         // loadingError => isLoading
         // При нажатии на кнопку "Повторить" пробуем загрузить данные ешё раз
-        viewOutput.retryButtonTap.filteredByState(trait.readOnlyState) { state in
+        viewOutput.retryButtonTap.filteredByState(trait.readOnlyState) { state -> Bool in
           guard case .loadingError = state else { return false }; return true
         }
         .do(onNext: requests.loadProfile)

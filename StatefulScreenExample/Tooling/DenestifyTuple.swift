@@ -57,7 +57,7 @@ public func denestify<A, B, C, D>(tuple: ((A, B), C, D)) -> (A, B, C, D) {
 }
 
 // 📝 @iDmitriyy
-// TODO: - не учтённый генератором вариант. Доработать чтоб были все варианты.
+// iDmitriyy_TODO: - не учтённый генератором вариант. Доработать чтоб были все варианты.
 public func denestify<A, B, C, D>(tuple: (((A, B), C), D)) -> (A, B, C, D) {
   let (((A, B), C), D) = tuple
   return (A, B, C, D)
@@ -142,27 +142,27 @@ extension ObservableType {
   public func denestifyTuple<A, B, C>() -> Observable<(A, B, C)> where Element == ((A, B), C) {
     map { denestify(tuple: $0) }
   }
-  
+
   /// Убирает вложенность из картэжей
   public func denestifyTuple<A, B, C>() -> Observable<(A, B, C)> where Element == (A, (B, C)) {
     map { denestify(tuple: $0) }
   }
-  
+
   /// Убирает вложенность из картэжей
   public func denestifyTuple<A, B, C, D>() -> Observable<(A, B, C, D)> where Element == ((A, B), (C, D)) {
     map { denestify(tuple: $0) }
   }
-  
+
   /// Убирает вложенность из картэжей
   public func denestifyTuple<A, B, C, D>() -> Observable<(A, B, C, D)> where Element == (A, (B, C), D) {
     map { denestify(tuple: $0) }
   }
-  
+
   /// Убирает вложенность из картэжей
   public func denestifyTuple<A, B, C, D>() -> Observable<(A, B, C, D)> where Element == ((A, B, C), D) {
     map { denestify(tuple: $0) }
   }
-  
+
   /// Убирает вложенность из картэжей
   public func denestifyTuple<A, B, C, D>() -> Observable<(A, B, C, D)> where Element == (A, (B, C, D)) {
     map { denestify(tuple: $0) }
@@ -172,7 +172,11 @@ extension ObservableType {
   public func denestifyTuple<A, B, C, D>() -> Observable<(A, B, C, D)> where Element == (((A, B), C), D) {
     map { denestify(tuple: $0) }
   }
+  
+  /// Убирает вложенность из картэжей
+  public func denestifyTuple<A, B, C, D>() -> Observable<(A, B, C, D)> where Element == ((A, B), C, D) {
+    map { denestify(tuple: $0) }
+  }
 }
 
 // swiftlint:enable large_tuple
-
